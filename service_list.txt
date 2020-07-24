@@ -1,0 +1,41 @@
+//service to register new username
+curl --request POST \
+  --url http://localhost:8080/register \
+  --header 'content-type: application/json' \
+  --cookie JSESSIONID=EC41CA6E66E61D46F7D2F12F6BB6DBD1 \
+  --data '{
+  "username": "test03",
+  "name": "test03",
+  "email": "test03@gmail.com",
+  "password": "123456"
+}'
+
+//service to create new token
+curl --request POST \
+  --url 'http://localhost:8080/oauth/token?grant_type=password&username=test01&password=123456' \
+  --header 'authorization: Basic anQ6anQ=' \
+  --cookie JSESSIONID=EC41CA6E66E61D46F7D2F12F6BB6DBD1
+  
+// service to get all users
+curl --request GET \
+  --url http://localhost:8080/api/user \
+  --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzU1NjAwNDcsInVzZXJfbmFtZSI6InRlc3QwMSIsImF1dGhvcml0aWVzIjpbIlVTRVIiXSwianRpIjoiZWI2OTdiYmItZGExZC00MTc5LThmMjgtZTUyZWNjOWNlODhkIiwiY2xpZW50X2lkIjoianQiLCJzY29wZSI6WyJhbGwiXX0.hFaWtufUwxgdG-eefAD1t3LqkIw7BHlPxKZbbCJgePnEYSpY0165l6BjzBWXb85f6mP_HH-WmREh_gU3rVWKAVN4ZSEjnI5aB3ysolOdNi88yscO9YzG_p9zxOVhGNjMzIUkKAseo3abmWCvo8730RfHG6QROpM3X9iwvOMTRRplhSwn_DLebzTZf64rL6XmhJISHxk0vahpFFKzq5EiJAYF7RubIQXZJywkyadJL5dBoJgc07w33qBlUR2LWbjauptqMB0NwlFPDjAJ2saqpzq4JuLokFaOWyKQFV7C110bsBNefshCM6i0L6Y6T33bhU_xdIOZq2WkrJ1Lo1vtjw' \
+  --header 'content-type: application/json' \
+  --cookie JSESSIONID=EC41CA6E66E61D46F7D2F12F6BB6DBD1
+
+// service to get user by id
+curl --request GET \
+  --url http://localhost:8080/api/user/5 \
+  --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzU1NjAwNDcsInVzZXJfbmFtZSI6InRlc3QwMSIsImF1dGhvcml0aWVzIjpbIlVTRVIiXSwianRpIjoiZWI2OTdiYmItZGExZC00MTc5LThmMjgtZTUyZWNjOWNlODhkIiwiY2xpZW50X2lkIjoianQiLCJzY29wZSI6WyJhbGwiXX0.hFaWtufUwxgdG-eefAD1t3LqkIw7BHlPxKZbbCJgePnEYSpY0165l6BjzBWXb85f6mP_HH-WmREh_gU3rVWKAVN4ZSEjnI5aB3ysolOdNi88yscO9YzG_p9zxOVhGNjMzIUkKAseo3abmWCvo8730RfHG6QROpM3X9iwvOMTRRplhSwn_DLebzTZf64rL6XmhJISHxk0vahpFFKzq5EiJAYF7RubIQXZJywkyadJL5dBoJgc07w33qBlUR2LWbjauptqMB0NwlFPDjAJ2saqpzq4JuLokFaOWyKQFV7C110bsBNefshCM6i0L6Y6T33bhU_xdIOZq2WkrJ1Lo1vtjw' \
+  --header 'content-type: application/json' \
+  --cookie JSESSIONID=EC41CA6E66E61D46F7D2F12F6BB6DBD1
+
+// service to update user
+curl --request PUT \
+  --url http://localhost:8080/api/user/5 \
+  --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzU1NjAwNDcsInVzZXJfbmFtZSI6InRlc3QwMSIsImF1dGhvcml0aWVzIjpbIlVTRVIiXSwianRpIjoiZWI2OTdiYmItZGExZC00MTc5LThmMjgtZTUyZWNjOWNlODhkIiwiY2xpZW50X2lkIjoianQiLCJzY29wZSI6WyJhbGwiXX0.hFaWtufUwxgdG-eefAD1t3LqkIw7BHlPxKZbbCJgePnEYSpY0165l6BjzBWXb85f6mP_HH-WmREh_gU3rVWKAVN4ZSEjnI5aB3ysolOdNi88yscO9YzG_p9zxOVhGNjMzIUkKAseo3abmWCvo8730RfHG6QROpM3X9iwvOMTRRplhSwn_DLebzTZf64rL6XmhJISHxk0vahpFFKzq5EiJAYF7RubIQXZJywkyadJL5dBoJgc07w33qBlUR2LWbjauptqMB0NwlFPDjAJ2saqpzq4JuLokFaOWyKQFV7C110bsBNefshCM6i0L6Y6T33bhU_xdIOZq2WkrJ1Lo1vtjw' \
+  --header 'content-type: application/json' \
+  --cookie JSESSIONID=EC41CA6E66E61D46F7D2F12F6BB6DBD1 \
+  --data '{
+  "name": "test01"
+}'

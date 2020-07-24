@@ -1,0 +1,91 @@
+# ssl specifications
+server:
+  tomcat:
+    max-threads: 200
+    accept-count: 10000
+    max-connections: 10000
+security:
+  filter-order: 0
+  sessions: never
+  basic:
+    realm: justthank-api
+  oauth2:
+    resource:
+      id: justthank-api
+      filter-order: 3
+    jwt:
+      # openssl genrsa -out jwt.pem 2048
+      # openssl rsa -in jwt.pem    
+      private.key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEpgIBAAKCAQEAwNOr4EKJWJMVm6kDlIlxB8JJn0gEJgn+V0/iIMeagzNJSmvl
+        1bYtU1yQrT0eRExeLbnJ9aVJDIkAlB8ZofFMtIP4xpw7On1WKTtMwT8KEOAku38n
+        Gx7fpLuxz3bm18yIg4/VMuCkvsEX5BDgRJ9ewMWKLEgGbdaUaT2bwrQ5Hi8LLQ3M
+        PG8gx6oV/VTCmh6D+c6X6SA7Ckzuu13hdy59Z7WSZj2cGhvSh0xUB2TzdFrULOuS
+        RznNEbAR3glADyynX2IF5LB7ExmEzaumetxyvWW0FwjiYce4R2ehIF1QQEU0dsKl
+        F8dSk3m0o50LOyY3iQZtHLtaa8kH/V7nmj/Y0QIDAQABAoIBAQCi+ALypalo996y
+        UXUaK9MgyJ7qhLYk5BtW9cfbBnfbXRQbVvfH2JGUO8527AnRlW2fXb+H4irL8lpP
+        1b0XNlYq1sMCMPaJ53ZToK+tP7clLhs9cCi/7ib8FjogapCNYGscLgr1VhFGuvGT
+        KoQw2zT83bd612C/ojSKgaxMMX94trdhMpwR+G5wDt9QftOvl6ntsw7lJlD8KNhN
+        0rRZCWpKMcHdCrqCqjlQEWKqA4MtSfq40i2JfbFWOjZ3g6ZoiWGk/dVBEw/vI+Rn
+        Fy7wf1JnoAMlsLq5ceTFOuHhnb2Eh+lDn39COhdacjs1ldstc303bOVHnu1FPDpk
+        yKY77NYxAoGBAO3PBDFN6Wpe3SBkUWGplynvGovnuY/vIV/jdIEXSZbbUJ5dIItq
+        1T8Y3uiwagRM0d8IA0DO3tUWegPSMLcHt9fWK5v+Jx66Nn18KAqEfsY2VdGnlJzR
+        qe3OwzOPWAobf0LcRPEqlUTFCcKf1PV0EUbpX4wtfMn72zbplqKQJnpNAoGBAM+T
+        x8/UsD2wWHRa4+Juy9TUOI6xLuHHznePXe8sMyR5Tk0gn0dfjyOfaBidrhAGp4WZ
+        6QYTSJVvN5rHR7ImH49JLK3M94zk7gyYvlIORNmzrMZEOy0PytPcv6oBExtJ3cLZ
+        1tvm+j4JoG9SyYvyp1DPOo68sIfLKYAdvNI+ZlKVAoGBALPhpLU6zvXUHgXTfC+Y
+        naxtnbH4LUfvxVoH7md7WwHOkVPI88YhoH5i7LIsR3VLOnEvWW6bTLj4kID1bD32
+        i5yq9z++5o56op8W3B7gjBiYnx/AWEyq15P3k3Yb1qeGlyPXBBs8b76eILzkM60b
+        B7qQ6uJYwgzzAqWt2XDMAx79AoGBAIWQKDxhNTmsU24i4YjcE8mQ+AdQmMLsZrxl
+        gmKXxRyN9UUJXZN2OEsKkdds9ggX0AjWHKstE0Ib+uJboZVOlHYE9nuqbAq7bzSp
+        v6RazBBsXRqB4rW++JpT6vt/j4S6hbePpYF/YLs0RIf88/RZoTEM9jfLz6bAoaZu
+        /AUn43z1AoGBAMMAr5oYjWH9/UleAqNoG0/x5tmpme/2IlMWeZ1nvjkTtGFN1jno
+        2WQXDfoF3OFTYJLYoWTLJszBjoAX/Jo79YjlukJhFsD1Rw47Z6eUr80J/PV5iax0
+        aGgsrqFHhIREvvuUlJvsGLR5mrST44oHxuHHc4AlTt628o8P5Dn3xskr
+        -----END RSA PRIVATE KEY-----
+      # openssl rsa -in jwt.pem -pubout
+      public.key: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwNOr4EKJWJMVm6kDlIlx
+        B8JJn0gEJgn+V0/iIMeagzNJSmvl1bYtU1yQrT0eRExeLbnJ9aVJDIkAlB8ZofFM
+        tIP4xpw7On1WKTtMwT8KEOAku38nGx7fpLuxz3bm18yIg4/VMuCkvsEX5BDgRJ9e
+        wMWKLEgGbdaUaT2bwrQ5Hi8LLQ3MPG8gx6oV/VTCmh6D+c6X6SA7Ckzuu13hdy59
+        Z7WSZj2cGhvSh0xUB2TzdFrULOuSRznNEbAR3glADyynX2IF5LB7ExmEzaumetxy
+        vWW0FwjiYce4R2ehIF1QQEU0dsKlF8dSk3m0o50LOyY3iQZtHLtaa8kH/V7nmj/Y
+        0QIDAQAB
+        -----END PUBLIC KEY-----   
+  
+
+---
+# properties for local
+endpoints:
+  shutdown:
+    sensitive: false
+    enabled: true
+env:
+  name: LOCAL
+server:
+  contextPath: /
+  port: 8080
+  ssl:
+    enabled: false
+management:
+  port: 8081
+  ssl:
+    enabled: false
+spring:
+  profiles: default,LOCAL
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo_oauth2?useUnicode=yes&characterEncoding=UTF8
+    username: root
+    password: root
+    tomcat:
+     init-s-q-l: SET NAMES 'utf8mb4'
+  jpa: 
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      

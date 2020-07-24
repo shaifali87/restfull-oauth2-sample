@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: restfull-oauth2-sample
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Shaifali Singh
+Implementation-Vendor-Id: com.skill
+Build-Jdk: 1.8.0_231
+Implementation-URL: http://projects.spring.io/spring-boot/restfull-oau
+ th2-sample/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.skill.demo.Application
+
